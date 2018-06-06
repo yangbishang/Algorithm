@@ -1,9 +1,9 @@
-
+//O(n2)
 //使用优化的BubbleSort
-public class BubbleSort {
+public class _01_BubbleSort {
 
     // 我们的算法类不允许产生任何实例
-    private BubbleSort(){}
+    private _01_BubbleSort(){}
 
     public static void sort(Comparable[] arr){
 

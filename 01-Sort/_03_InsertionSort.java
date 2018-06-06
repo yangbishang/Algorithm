@@ -1,9 +1,9 @@
-
+//O(n2)
 //数组与接近有序，插入排序越快，当数组完全有序时，插入排序为O(n)级别的排序
-public class InsertionSort{
+public class _03_InsertionSort {
 
     // 我们的算法类不允许产生任何实例
-    private InsertionSort(){}
+    private _03_InsertionSort(){}
 
     public static void sort(Comparable[] arr){
         int n = arr.length;
@@ -40,13 +40,5 @@ public class InsertionSort{
         arr[j] = t;
     }
 
-    // 测试InsertionSort
-    public static void main(String[] args) {
 
-        int N = 20000;
-        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("imooc.two.InsertionSort", arr);
-
-        return;
-    }
 }
