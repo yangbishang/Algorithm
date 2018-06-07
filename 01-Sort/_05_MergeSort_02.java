@@ -1,13 +1,15 @@
 import java.util.Arrays;
-//缺点：要开辟临时空间（O（n)的额外空间），但是时间的复杂度相对于空间的复杂更重要
-public class _05_MergeSort {
+
+public class _05_MergeSort_02 {
+
+
     // 我们的算法类不允许产生任何实例
-    private _05_MergeSort(){}
+    private _05_MergeSort_02(){}
 
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
 
-        Comparable[] aux = Arrays.copyOfRange(arr, l, r+1);  //arr[l] - arr[r]
+        Comparable[] aux = Arrays.copyOfRange(arr, l, r+1);
 
         // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
         int i = l, j = mid+1;
@@ -28,23 +30,26 @@ public class _05_MergeSort {
         }
     }
 
-    // 递归使用归并排序,对arr[l...r]的范围进行排序
-    private static void sort(Comparable[] arr, int l, int r) {
-
-        if (l >= r)
-            return;
-
-        int mid = (l+r)/2;         //其实要注意l+r溢出
-        sort(arr, l, mid);
-        sort(arr, mid + 1, r);
-        merge(arr, l, mid, r);
-    }
-
     public static void sort(Comparable[] arr){
 
         int n = arr.length;
-        sort(arr, 0, n-1);
+
+        // Merge Sort Bottom Up 无优化版本
+//        for (int sz = 1; sz < n; sz *= 2)
+//            for (int i = 0; i < n - sz; i += sz+sz)
+//                // 对 arr[i...i+sz-1] 和 arr[i+sz...i+2*sz-1] 进行归并
+//                merge(arr, i, i+sz-1, Math.min(i+sz+sz-1,n-1));
+
+        // Merge Sort Bottom Up 优化
+        // 对于小数组, 使用插入排序优化
+        for( int i = 0 ; i < n ; i += 16 )
+            _03_InsertionSort.sort(arr, i, Math.min(i+15, n-1) );
+
+        for( int sz = 16; sz < n ; sz += sz )
+            for( int i = 0 ; i + sz < n  ; i += sz+sz )
+                // 对于arr[mid] <= arr[mid+1]的情况,不进行merge
+                if( arr[i+sz-1].compareTo(arr[i+sz]) > 0 )
+                    merge(arr, i, i+sz-1, Math.min(i+sz+sz-1,n-1) );
+
     }
-
-
 }
