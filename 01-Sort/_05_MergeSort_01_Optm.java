@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
-public class _05_MergeSort_01 {
+public class _05_MergeSort_01_Optm {
     // 我们的算法类不允许产生任何实例
-    private _05_MergeSort_01(){}
+    private _05_MergeSort_01_Optm(){}
 
     // 将arr[l...mid]和arr[mid+1...r]两部分进行归并
     private static void merge(Comparable[] arr, int l, int mid, int r) {
