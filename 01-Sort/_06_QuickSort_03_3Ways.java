@@ -1,3 +1,5 @@
+
+//相较于2路快速排序，三路快速排序不需要再次递归排列等于v的数，
 public class _06_QuickSort_03_3Ways {
     // 我们的算法类不允许产生任何实例
     private _06_QuickSort_03_3Ways(){}
@@ -28,6 +30,7 @@ public class _06_QuickSort_03_3Ways {
             else if( arr[i].compareTo(v) > 0 ){
                 swap( arr, i, gt-1);
                 gt --;
+                i ++;
             }
             else{ // arr[i] == v
                 i ++;
@@ -44,6 +47,7 @@ public class _06_QuickSort_03_3Ways {
 
         int n = arr.length;
         sort(arr, 0, n-1);
+
     }
 
     private static void swap(Object[] arr, int i, int j) {
@@ -52,15 +56,5 @@ public class _06_QuickSort_03_3Ways {
         arr[j] = t;
     }
 
-    // 测试 QuickSort3Ways
-    public static void main(String[] args) {
 
-        // 三路快速排序算法也是一个O(nlogn)复杂度的算法
-        // 可以在1秒之内轻松处理100万数量级的数据
-        int N = 1000000;
-        Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 100000);
-        SortTestHelper.testSort("bobo.algo.QuickSort3Ways", arr);
-
-        return;
-    }
 }
