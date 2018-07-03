@@ -3,28 +3,51 @@ public class MaxHeap<E extends Comparable> {
     private int size;
     private int capacity;
 
+
+    public MaxHeap(){
+        this.data = (E[])new Comparable[10];
+        this.size = 0;
+        this.capacity = 10;
+    }
     public MaxHeap(int capacity){
         this.data = (E[])new Comparable[capacity];
         size = 0;
         this.capacity = capacity;
     }
-    public MaxHeap(){
-        this.data = (E[])new Comparable[capacity];
-        this.size = size;
-        this.capacity = 10;
+
+    // 构造函数, 通过一个给定数组创建一个最大堆
+    // 该构造堆的过程, 时间复杂度为O(n)
+    public MaxHeap(E[] arr){
+        int n = arr.length;
+
+        data = (E[])new Comparable[n];
+        for(int i = 0 ; i<n ; i++)
+            data[i] = arr[i];
+        size = n;
+
+        for(int i = (size-1)/2; i>=0 ; i--)
+            shiftDown(i);
     }
+
+
+
 
     public boolean isEmpty(){
         return size==0;
     }
 
+    public int getSize(){
+        return size;
+    }
+
 
     //向堆中添加元素
     public void add(E e){
-        if((size+1) > capacity)
+        if((size) > capacity)
             throw new IllegalArgumentException("the heap capacity is full!");
-        data[++size] = e;
-        shiftUp(size);
+        data[size] = e;
+        size ++ ;
+        shiftUp(size-1);
     }
     private void shiftUp(int k){
         while(k>0 && data[k].compareTo(data[(k-1)/2])>0){
@@ -40,25 +63,30 @@ public class MaxHeap<E extends Comparable> {
 
         E e = data[0];
 
-        swap(0,size);
+        swap(0,size-1);
         size -- ;
         shiftDown(0);
         return e;
     }
     public void shiftDown(int k){
-        while( k*2+1 < size && data[k].compareTo(data[k*2+1])>0){
-            int j = k*2+1;
-            if( j+1 < size && data[k].compareTo(data[j+1])>0){
-                j++;
-                swap(k,j);
-                k=j;
-            }
+        while(2*k+1 <= size-1){
+            int j = 2*k+1;
+
+            if(j+1 <= size-1 && data[j+1].compareTo(data[j]) > 0)     // 二叉堆是完全二叉树，他只满足二个性质：
+                j++;                                                   //  1）堆中某个节点的值总是不大于其父节点的值（左右子节点大小随意）
+                                                                       //  2）堆总是完全二叉树
+            if(data[k].compareTo(data[j])>=0)
+                break;
+
             swap(k,j);
             k=j;
 
         }
-    }
 
+    }
+    public E getMax(){
+        return data[0];
+    }
 
     // 交换堆中索引为i和j的两个元素
     private void swap(int i, int j){
@@ -67,26 +95,6 @@ public class MaxHeap<E extends Comparable> {
         data[j] = t;
     }
 
-    public static void main(String[] args) {
 
-        MaxHeap<Integer> maxHeap = new MaxHeap<Integer>(100);
-        int N = 100; // 堆中元素个数
-        int M = 100; // 堆中元素取值范围[0, M)
-        for( int i = 0 ; i < N ; i ++ )
-            maxHeap.add( new Integer((int)(Math.random() * M)) );
-
-        Integer[] arr = new Integer[N];
-        // 将maxheap中的数据逐渐使用extractMax取出来
-        // 取出来的顺序应该是按照从大到小的顺序取出来的
-        for( int i = 0 ; i < N ; i ++ ){
-            arr[i] = maxHeap.extractMax();
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-
-        // 确保arr数组是从大到小排列的
-        for( int i = 1 ; i < N ; i ++ )
-            assert arr[i-1] >= arr[i];
-    }
 
 }
