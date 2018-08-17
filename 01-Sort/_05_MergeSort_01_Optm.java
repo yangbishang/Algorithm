@@ -10,20 +10,20 @@ public class _05_MergeSort_01_Optm {
         Comparable[] aux = Arrays.copyOfRange(arr, l, r+1);
 
         // 初始化，i指向左半部分的起始索引位置l；j指向右半部分起始索引位置mid+1
-        int i = l, j = mid+1;
-        for( int k = l ; k <= r; k ++ ){
+        int lp = l, rp = mid+1;
+        for( int i = l ; i <= r; i ++ ){
 
-            if( i > mid ){  // 如果左半部分元素已经全部处理完毕
-                arr[k] = aux[j-l]; j ++;
+            if( lp > mid ){  // 如果左半部分元素已经全部处理完毕
+                arr[i] = aux[rp-l]; rp ++;
             }
-            else if( j > r ){   // 如果右半部分元素已经全部处理完毕
-                arr[k] = aux[i-l]; i ++;
+            else if( rp > r ){   // 如果右半部分元素已经全部处理完毕
+                arr[i] = aux[lp-l]; lp ++;
             }
-            else if( aux[i-l].compareTo(aux[j-l]) < 0 ){  // 左半部分所指元素 < 右半部分所指元素
-                arr[k] = aux[i-l]; i ++;
+            else if( aux[lp-l].compareTo(aux[rp-l]) < 0 ){  // 左半部分所指元素 < 右半部分所指元素
+                arr[i] = aux[lp-l]; lp ++;
             }
             else{  // 左半部分所指元素 >= 右半部分所指元素
-                arr[k] = aux[j-l]; j ++;
+                arr[i] = aux[rp-l]; rp ++;
             }
         }
     }
@@ -54,5 +54,8 @@ public class _05_MergeSort_01_Optm {
         int n = arr.length;
         sort(arr, 0, n-1);
     }
+
+
+
 
 }

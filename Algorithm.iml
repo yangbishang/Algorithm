@@ -5,8 +5,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/01-Sort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/02-HeapSort" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03-BTreeSort" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Test" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/04-LeetCode" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
