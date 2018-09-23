@@ -15,7 +15,7 @@ import java.util.List;
  说明:
  尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
  */
-public class Solution_17 {
+public class _01_Phone_Number {
 
 
     private ArrayList<String> res;
@@ -79,6 +79,6 @@ public class Solution_17 {
 
     public static void main(String[] args) {
 
-        printList((new Solution_17()).letterCombinations("234"));
+        printList((new _01_Phone_Number()).letterCombinations("234"));
     }
 }

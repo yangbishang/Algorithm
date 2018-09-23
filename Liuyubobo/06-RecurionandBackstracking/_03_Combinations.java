@@ -6,7 +6,6 @@ import java.util.List;
  给定两个整数 n 和 k，返回 1 ... n 中所有可能的 k 个数的组合。
 
  示例:
-
  输入: n = 4, k = 2
  输出:
  [
@@ -18,7 +17,9 @@ import java.util.List;
  [1,4],
  ]
  */
-public class Solution_77 {
+// 时间复杂度: O(n^k)
+// 空间复杂度: O(k)
+public class _03_Combinations {
     private ArrayList<List<Integer>> res;
 
     public List<List<Integer>> combine(int n, int k) {
@@ -58,7 +59,7 @@ public class Solution_77 {
 
     public static void main(String[] args) {
 
-        List<List<Integer>> res = (new Solution_77()).combine(4, 2);
+        List<List<Integer>> res = (new _03_Combinations()).combine(4, 2);
         for(List<Integer> list: res)
             printList(list);
     }

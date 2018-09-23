@@ -7,7 +7,21 @@
       <sourceFolder url="file://$MODULE_DIR$/02-HeapSort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/03-BTreeSort" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/04-LeetCode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04-LeetCode-Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/05-LeetCode-SetAndMap" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/06-LeetCode-LinkedList" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/07-LeetCode-StackAndQueue" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/08-LeetCode-BST" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/09-LeetCode-RecurionandBackstracking" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/10-LeetCode-DynamicProgramming" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Interview" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/11-Greedy-Algorithms" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/12-Math" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liuyubobo/01-Array" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liuyubobo/07-Dynamic-Programming" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liuyubobo/06-RecurionandBackstracking" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liuyubobo/02-LinkedList" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Liuyubobo/05-BinaryTreeAndRecursion" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

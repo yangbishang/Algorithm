@@ -5,13 +5,11 @@ import java.util.Map;
 
 public class Test {
 
-    public static void invoker(){
-        Son f = new Son();
-        HashMap map  = new HashMap();
-        f.doSomething(map);
-    }
-
-    public static void main(String[] args){
-        invoker();
+    public static void main(String[] args) {
+        int j = 0;
+        for(int i=0; i<100 ; i++){
+            j = j++;
+        }
+        System.out.println(j);
     }
 }

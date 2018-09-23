@@ -20,7 +20,7 @@
 
  输出: 3
  */
-public class Solution_200 {
+public class _05_NumberOfIslands {
     private int d[][] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     private int m, n;
     private boolean visited[][];
@@ -84,7 +84,7 @@ public class Solution_200 {
                 {'1','1','0','0','0'},
                 {'0','0','0','0','0'}
         };
-        System.out.println((new Solution_200()).numIslands(grid1));
+        System.out.println((new _05_NumberOfIslands()).numIslands(grid1));
         // 1
 
         // ---
@@ -95,7 +95,7 @@ public class Solution_200 {
                 {'0','0','1','0','0'},
                 {'0','0','0','1','1'}
         };
-        System.out.println((new Solution_200()).numIslands(grid2));
+        System.out.println((new _05_NumberOfIslands()).numIslands(grid2));
         // 3
     }
 }

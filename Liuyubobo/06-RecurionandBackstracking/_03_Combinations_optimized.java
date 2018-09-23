@@ -4,7 +4,7 @@ import java.util.List;
 
 
 //回溯剪枝
-public class Solution_77_optimized {
+public class _03_Combinations_optimized {
     private ArrayList<List<Integer>> res;
 
     public List<List<Integer>> combine(int n, int k) {
@@ -46,7 +46,7 @@ public class Solution_77_optimized {
 
     public static void main(String[] args) {
 
-        List<List<Integer>> res = (new Solution_77_optimized()).combine(4, 2);
+        List<List<Integer>> res = (new _03_Combinations_optimized()).combine(4, 2);
         for(List<Integer> list: res)
             printList(list);
     }

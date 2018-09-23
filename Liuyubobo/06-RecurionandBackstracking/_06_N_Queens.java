@@ -30,7 +30,7 @@ import java.util.List;
  ]
  解释: 4 皇后问题存在两个不同的解法。
  */
-public class Solution_51 {
+public class _06_N_Queens {
 
     private boolean[] col;
     private boolean[] dia1;
@@ -98,7 +98,7 @@ public class Solution_51 {
     public static void main(String[] args) {
 
         int n = 4;
-        List<List<String>> res = (new Solution_51()).solveNQueens(n);
+        List<List<String>> res = (new _06_N_Queens()).solveNQueens(n);
         for(List<String> board: res)
             printBoard(board);
     }

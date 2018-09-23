@@ -70,7 +70,7 @@ public class Solution_79 {
 
         String words[] = {"ABCCED", "SEE", "ABCB" };
         for(int i = 0 ; i < words.length ; i ++)
-            if((new Solution_79()).exist(b1, words[i]))
+            if((new _04_Word_Search()).exist(b1, words[i]))
                 System.out.println("found " + words[i]);
             else
                 System.out.println("can not found " + words[i]);
@@ -78,7 +78,7 @@ public class Solution_79 {
         // ---
 
         char[][] b2 = {{'A'}};
-        if((new Solution_79()).exist(b2,"AB"))
+        if((new _04_Word_Search()).exist(b2,"AB"))
             System.out.println("found AB");
         else
             System.out.println("can not found AB");
